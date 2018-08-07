@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Web App Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <h3 class = 'app-name'><strong>Your</strong>App&trade;</h3>
+      <div style = 'margin-right: .25em; width: 100%' class = 'popup'>
+        <img src="img/icons/icon-bell.svg" alt="" height = '26' class = 'bell' id = "bell">
+        <div class="popup-content" id = 'popup-content'>
+          <div class="notification-container">
+            <div class="notification-info">
+              <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="">
+              <div class="notification-name">
+                <p>Bill liked Star Wars: A New Hope</p>
+                <p>4 Hours Ago</p>
+              </div>
+            </div>
+            <div class="arrow-right"><a href=""><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+          </div>
+          <div class="notification-container">
+            <div class="notification-info">
+              <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="">
+              <div class="notification-name">
+                <p>Steve commented on Incredibles 2</p>
+                <p>6 Hours Ago</p>
+              </div>
+            </div>
+            <div class="arrow-right"><a href="#"><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="img/photos/profile-image.png" alt="" class = 'profile-image'>
+        <p>Josh Sullivan</p>
+      </div>
+    </header>
+    <nav>
+      <a href="#" class = 'active-nav'><img src="img/icons/icon-dashboard.svg" alt="" height = '28'></a>
+      <a href="#"><img src="img/icons/icon-members.svg" alt="" height = '28'></a>
+      <a href="#"><img src="img/icons/icon-visits.svg" alt="" height = '28'></a>
+      <a href="#"><img src="img/icons/icon-settings.svg" alt="" height = '28'></a>
+    </nav>
+    <section class="top">
+      <div class="tabs">
+        <div class="tab-left">
+          <p>Dashboard</p>
+        </div>
+        <div class="search-container">
+          <input type="text" name="search" id="search" placeholder="Search">
+          <a href=""><img src="img/icons/search.svg" alt="search" width="15" height="15"></a>
+        </div>
+      </div>
+      <div class="alert" id = 'alert'>
+          <h5>Alert</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida tincidunt velit, eu convallis sapien scelerisque in.</p>
+          <img src="img/icons/delete.svg" alt="" height = '12' id = 'delete'>
+      </div>
+    </section>
+    <main>
+      <section class="widget line big">
+        <div class="line-header">
+          <h4 class = 'widget-label' id = "line-heading">TRAFFIC</h4>
+          <div class="line-nav">
+            <ul id = 'nav'>
+              <li id = 'hourly-button'>Hourly</li>
+              <li id = 'daily-button' class = 'active'>Daily</li>
+              <li id = 'weekly-button'  >Weekly</li>
+              <li id = 'monthly-button'>Monthly</li>
+            </ul>
+          </div>
+        </div>
+        <div class="linechart-container">
+          <canvas id="traffic" width="280" height = '300'></canvas>
+        </div>
+      </section>
+      <section class="widget bar">
+        <h4 class = 'widget-label'>DAILY TRAFFIC</h4>
+        <div class="">
+          <canvas id="daily" width="280" height="200"></canvas>
+        </div>
+      </section>
+      <section class="widget doughnut">
+        <h4 class = 'widget-label'>MOBILE USERS</h4>
+        <div class="flex-doughnut">
+          <div class="">
+            <canvas id="mobile" width="240" height="200"></canvas>
+          </div>
+          <div class="legend">
+            <div class="device">
+              <span id = 'phone'>&nbsp;</span>
+              <p>Phones</p>
+            </div>
+            <div class="device">
+              <span id = 'tablet'>&nbsp;</span>
+              <p>Tablets</p>
+            </div>
+            <div class="device">
+              <span id = 'desktop'>&nbsp;</span>
+              <p>Desktop</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="widget social-widget big">
+        <h4 class = 'widget-label'>SOCIAL STATS</h4>
+        <div class="social-cards">
+          <div class="card">
+            <div class = 'social-icon-background'>
+              <img src="img/icons/icon-twitter.svg" alt="" height = '32' width = '32' class = 'social-icon'>
+            </div>
+            <div class="social-data">
+              <h3 class="social-name">Twitter</h3>
+              <p class="social-number">10,345</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class = 'social-icon-background'>
+              <img src="img/icons/icon-facebook.svg" alt="" class = 'social-icon'>
+            </div>
+            <div class="social-data">
+              <h3 class="social-name">Facebook</h3>
+              <p class="social-number">8,739</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class = 'social-icon-background'>
+              <img src="img/icons/icon-google-plus.svg" alt="" class = 'social-icon'>
+            </div>
+            <div class="social-data">
+              <h3 class="social-name">Google+</h3>
+              <p class="social-number">2,530</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="widget members">
+        <h4 class = 'widget-label'>NEW MEMBERS</h4>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/0.jpg" alt="">
+            <div class = 'member-name'>
+              <p>Sally Soup</p>
+              <a href="">soup@example.com</a>
+            </div>
+          </div>
+          <div class="member-date">
+            <p>07/29/18</p>
+          </div>
+        </div>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="">
+            <div class = 'member-name'>
+              <p>Steve Salad</p>
+              <a href="">salad@example.com</a>
+            </div>
+          </div>
+          <div class="member-date">
+            <p>07/25/18</p>
+          </div>
+        </div>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/3.jpg" alt="">
+            <div class = 'member-name'>
+              <p>Pete Pasta</p>
+              <a href="">pasta@example.com</a>
+            </div>
+          </div>
+          <div class="member-date">
+            <p>07/21/18</p>
+          </div>
+        </div>
+        <div class="member-container fourth">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/4.jpg" alt="">
+            <div class = 'member-name'>
+              <p>Luke Lemon</p>
+              <a href="">lemon@example.com</a>
+            </div>
+          </div>
+          <div class="member-date">
+            <p>07/18/18</p>
+          </div>
+        </div>
+      </section>
+      <section class="widget recent">
+        <h4 class = 'widget-label'>RECENT ACTIVITY</h4>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/1.jpg" alt="">
+            <div class="member-name">
+              <p>Bill liked Star Wars: A New Hope</p>
+              <p>4 Hours Ago</p>
+            </div>
+          </div>
+          <div class="arrow-right"><a href=""><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+        </div>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/2.jpg" alt="">
+            <div class="member-name">
+              <p>Steve commented on Incredibles 2</p>
+              <p>6 Hours Ago</p>
+            </div>
+          </div>
+          <div class="arrow-right"><a href="#"><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+        </div>
+        <div class="member-container">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/3.jpg" alt="">
+            <div class="member-name">
+              <p>Pete watched House of Cards</p>
+              <p>9 Hours Ago</p>
+            </div>
+          </div>
+          <div class="arrow-right"><a href="#"><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+        </div>
+        <div class="member-container fourth">
+          <div class="member-info">
+            <img src="https://randomuser.me/api/portraits/lego/4.jpg" alt="">
+            <div class="member-name">
+              <p>Luke shared a clip from Stranger Things</p>
+              <p>11 Hours Ago</p>
+            </div>
+          </div>
+          <div class="arrow-right"><a href="#"><img src="img/icons/arrow-right.svg" alt="" height = '18'></a></div>
+        </div>
+      </section>
+      <section class="widget message">
+        <h4 class = 'widget-label'>MESSAGE USER</h4>
+        <form method="post" action="index.html" class = "message-form">
+          <div class="autocomplete">
+            <input type="text" name="user" placeholder="Search for User" class = 'message-user' id = "message-user">
+          </div>
+          <textarea name="message" placeholder="Message for User"></textarea>
+          <input type="submit" value="Send" class = 'message-submit'>
+        </form>
+      </section>
+      <section class="widget settings">
+        <h4 class = 'widget-label'>SETTINGS</h4>
+        <div class="switches">
+          <div class="toggle">
+            <p>Send Email Notifications</p>
+            <label class="switch">
+              <input type="checkbox" id = 'email-notifications'>
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="toggle">
+            <p>Set Profile to Public</p>
+            <label class="switch">
+              <input type="checkbox" id = 'public-profile'>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <div class="select-container">
+          <label for="select"><img src="img/icons/arrow-down.svg" alt=""></label>
+          <select name="timezone_offset" id="select" class="span5">
+            <option value="" disabled selected hidden>Select Timezone</option>
+            <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+            <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+            <option value="-10:00">(GMT -10:00) Hawaii</option>
+            <option value="-09:50">(GMT -9:30) Taiohae</option>
+            <option value="-09:00">(GMT -9:00) Alaska</option>
+            <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+            <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+            <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+            <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+            <option value="-04:50">(GMT -4:30) Caracas</option>
+            <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+            <option value="-03:50">(GMT -3:30) Newfoundland</option>
+            <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+            <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+            <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+            <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+            <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+            <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+            <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+            <option value="+03:50">(GMT +3:30) Tehran</option>
+            <option value="+04:00">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+            <option value="+04:50">(GMT +4:30) Kabul</option>
+            <option value="+05:00">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+            <option value="+05:50">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+            <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+            <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+            <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+            <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+            <option value="+08:00">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+            <option value="+08:75">(GMT +8:45) Eucla</option>
+            <option value="+09:00">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+            <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+            <option value="+10:00">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+            <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+            <option value="+11:00">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+            <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+            <option value="+12:00">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+            <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+            <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+            <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+          </select>
+          <div class="button-container">
+            <button class = "button save">SAVE</button>
+            <button class = "button cancel">CANCEL</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+    			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+    			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    			  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
