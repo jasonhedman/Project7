@@ -90,6 +90,11 @@ ul {
 .bell {
   display: block;
   margin: auto 0 auto auto;
+  transition: .5s;
+}
+
+.bell:hover {
+   transform: scale(1.3);
 }
 
 nav {

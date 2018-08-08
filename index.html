@@ -237,7 +237,7 @@
       </section>
       <section class="widget message">
         <h4 class = 'widget-label'>MESSAGE USER</h4>
-        <form method="post" action="index.html" class = "message-form">
+        <form name = 'message' method="post" action="index.html" class = "message-form">
           <div class="autocomplete">
             <input type="text" name="user" placeholder="Search for User" class = 'message-user' id = "message-user">
           </div>
@@ -264,8 +264,8 @@
           </div>
         </div>
         <div class="select-container">
-          <label for="select"><img src="img/icons/arrow-down.svg" alt=""></label>
-          <select name="timezone_offset" id="select" class="span5">
+          <label for="timezone-offset"><img src="img/icons/arrow-down.svg" alt=""></label>
+          <select name="timezone_offset" id="timezone-offset" class="span5">
             <option value="" disabled selected hidden>Select Timezone</option>
             <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
             <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>

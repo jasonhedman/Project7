@@ -243,11 +243,11 @@ var mobileChart = new Chart(mobile, {
 
 
 //Local Storage
-var alert = document.getElementById('alert');
-var alertDelete = document.getElementById('delete')
+var bannerAlert = document.getElementById('alert');
+var alertDelete = document.getElementById('delete');
 
 alertDelete.addEventListener("click", function(){
-  alert.style.display = "none"
+  bannerAlert.style.display = "none"
 });
 
 var email = document.getElementById('email-notifications');
@@ -341,6 +341,41 @@ document.addEventListener("click", function (e) {
 }
 
 autocomplete(document.getElementById("message-user"), users);
+
+//Form Validation
+
+var messageForm = document.forms['message'];
+var messageUser = document.forms['message']['user'];
+var messageForUser = document.forms['message']['message'];
+var messageUserValue = document.forms['message']['user'].value;
+var messageForUserValue = document.forms['message']['message'].value;
+
+messageForm.addEventListener('submit', function (event){
+  event.preventDefault();
+  if((document.forms['message']['user'].value === '' || document.forms['message']['user'].value === null) && (document.forms['message']['message'].value === '' || document.forms['message']['message'].value === null)){
+    window.alert('Both message fields are empty');
+    return false;
+  } else if(document.forms['message']['user'].value=== '' || null) {
+    window.alert('Please enter a user to message');
+    return false;
+  } else if(document.forms['message']['message'].value === '' || null) {
+    window.alert('Please enter a message for the user');
+    return false;
+  } else {
+    document.forms['message']['user'].value = null;
+    document.forms['message']['message'].value = null;
+    return true;
+  }
+});
+
+messageUser.addEventListener('change', function(){
+  messageUserValue = document.forms['message']['user'].value;
+})
+
+messageForUser.addEventListener('change', function(){
+  messageForUserValue = document.forms['message']['message'].value;
+})
+
 //TrafficCharts
 
 
